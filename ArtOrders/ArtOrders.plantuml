@@ -1,0 +1,266 @@
+@startuml
+
+title __ARTORDERS's Class Diagram__\n
+
+  namespace orders {
+    class orders.Main {
+    }
+  }
+  
+
+  namespace orders {
+    namespace controller.queries {
+      class orders.controller.queries.ArtOrderController {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace controller.queries {
+      class orders.controller.queries.GalleryController {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace controller.queries {
+      class orders.controller.queries.OrderApplicationController {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace controller.queries {
+      class orders.controller.queries.UserController {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace controller.utils {
+      class orders.controller.utils.DBConnector {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace controller.utils {
+      class orders.controller.utils.Hasher {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace model.entities {
+      class orders.model.entities.ArtOrder {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace model.entities {
+      class orders.model.entities.Gallery {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace model.entities {
+      class orders.model.entities.OrderApplication {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace model.entities {
+      class orders.model.entities.User {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace model.enums {
+      enum OrderStatus {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace model.enums {
+      enum OrderStyle {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace model.enums {
+      enum OrderType {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.panels {
+      class orders.view.panels.OrdersPanel {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.panels {
+      class orders.view.panels.ProfilePanel {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.panels {
+      class orders.view.panels.UsersPanel {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.renderers {
+      class orders.view.renderers.GalleryRenderer {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.renderers {
+      class orders.view.renderers.ImageRenderer {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.renderers {
+      class orders.view.renderers.OrderApplicationRenderer {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.renderers {
+      class orders.view.renderers.OrderRenderer {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.renderers {
+      class orders.view.renderers.UserRenderer {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.windows {
+      class orders.view.windows.LoginWindow {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.windows {
+      class orders.view.windows.MainWindow {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.windows {
+      class orders.view.windows.OpenOrderWindow {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.windows {
+      class orders.view.windows.ProfileEditorWindow {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.windows {
+      class orders.view.windows.RegisterWindow {
+      }
+    }
+  }
+  
+
+  namespace orders {
+    namespace view.windows {
+      class orders.view.windows.SearchWindow {
+      }
+    }
+  }
+  
+
+  namespace test {
+    class test.UserControllerTest {
+    }
+  }
+  
+
+  orders.model.entities.ArtOrder o-- orders.model.entities.User : customer
+  orders.model.entities.ArtOrder o-- orders.model.entities.OrderApplication : orderApplication
+  orders.model.entities.ArtOrder o-- orders.model.enums.OrderStatus : orderStatus
+  orders.model.entities.Gallery o-- orders.model.entities.User : user
+  orders.model.entities.OrderApplication o-- orders.model.entities.User : artist
+  orders.model.entities.OrderApplication o-- orders.model.enums.OrderStyle : style
+  orders.model.entities.OrderApplication o-- orders.model.enums.OrderType : type
+  orders.view.panels.OrdersPanel -up-|> javax.swing.JPanel
+  orders.view.panels.ProfilePanel -up-|> javax.swing.JPanel
+  orders.view.panels.UsersPanel -up-|> javax.swing.JPanel
+  orders.view.renderers.GalleryRenderer .up.|> javax.swing.ListCellRenderer
+  orders.view.renderers.GalleryRenderer -up-|> javax.swing.JPanel
+  orders.view.renderers.ImageRenderer .up.|> javax.swing.ListCellRenderer
+  orders.view.renderers.ImageRenderer -up-|> javax.swing.JPanel
+  orders.view.renderers.OrderApplicationRenderer .up.|> javax.swing.ListCellRenderer
+  orders.view.renderers.OrderApplicationRenderer -up-|> javax.swing.JPanel
+  orders.view.renderers.OrderRenderer .up.|> javax.swing.ListCellRenderer
+  orders.view.renderers.OrderRenderer -up-|> javax.swing.JPanel
+  orders.view.renderers.UserRenderer .up.|> javax.swing.ListCellRenderer
+  orders.view.renderers.UserRenderer -up-|> javax.swing.JPanel
+  orders.view.windows.MainWindow o-- orders.view.panels.OrdersPanel : ordersPanel
+  orders.view.windows.MainWindow o-- orders.view.panels.ProfilePanel : profilePanel
+  orders.view.windows.MainWindow o-- orders.model.entities.User : user
+  orders.view.windows.MainWindow o-- orders.view.panels.UsersPanel : usersPanel
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
